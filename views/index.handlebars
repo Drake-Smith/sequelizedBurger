@@ -9,11 +9,12 @@
 				{{#unless this.devoured}}
 				<li>
 					{{!-- {{this.id}} --}}
-					{{this.burger_name}}
+					
 
 					<form action="index/updateOne/{{this.id}}?_method=PUT" method="POST">
+						{{this.burger_name}}
 						<input type="hidden" name="devoured" value="true">
-							<button type="submit">Devour It!</button>
+							<button class="btn btn-danger" type="submit">Devour It!</button>
 					</form>
 				</li>
 				{{/unless}}
@@ -29,7 +30,7 @@
 				<div class="form-group">
 					<input type="text" id="ca" name="burger_name">
 				</div>
-				<button type="submit">Add Burger</button>
+				<button class="btn" type="submit">Add Burger</button>
 			</form>
 	</div>
 
@@ -40,16 +41,13 @@
 				{{#if this.devoured}}
 				<li>
 					{{!-- {{this.id}} --}}
-					{{this.burger_name}}
 					
-					<form action="index/updateOne/{{this.id}}?_method=PUT" method="POST">
-		            	<input type="hidden" name="devoured" value="false">
-		          	</form>
-{{!-- 
+					
 		          	<form action="index/delete/{{this.id}}?_method=DELETE" method="POST">
-						<input type="hidden" name="devoured" value="true">
-							<button type="submit">Remove Burger</button>
-					</form> --}}
+		          		{{this.burger_name}}
+						<input type="hidden" name="delete" value="true">
+						<button class="btn btn-danger" type="submit">X</button>
+					</form>
 				</li>
 				{{/if}}
 			{{/each}}

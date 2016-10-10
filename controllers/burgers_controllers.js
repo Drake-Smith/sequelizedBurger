@@ -44,15 +44,16 @@ router.put('/index/updateOne/:id', function(req, res) {
 	});
 });
 
-// router.delete('/delete/:id', function(req, res) {
-// 	models.Burger.destroy({
-// 		where: {
-// 			id: req.params.id
-// 		}
-// 	}).then(function() {
-// 		res.redirect('/');
-// 	});
-// });
+router.delete('/index/delete/:id', function(req, res) {
+	models.Burger.destroy({
+		where: {
+			id: req.params.id
+		}
+	}).then(function() {
+		res.redirect('/');
+	});
+});
+
 
 module.exports = router;
 
