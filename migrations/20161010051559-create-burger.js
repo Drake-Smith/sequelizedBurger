@@ -13,7 +13,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       devoured: {
-        {type: Sequelize.BOOLEAN, defaultValue: false}
+        type: Sequelize.BOOLEAN, 
+        defaultValue: false
       },
       createdAt: {
         allowNull: false,

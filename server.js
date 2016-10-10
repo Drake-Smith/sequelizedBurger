@@ -2,6 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+var Umzug = require('umzug');
+var umzug = new Umzug({});
+
 var app = express();
 
 var models = require("./models");
@@ -28,4 +31,6 @@ app.listen(port);
 
 models.sequelize.sync().then(function() {
 	var server = app.listen(app.get('port'));
-})
+});
+
+
