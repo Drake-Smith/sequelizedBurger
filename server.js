@@ -4,6 +4,8 @@ var methodOverride = require('method-override');
 
 var app = express();
 
+var models = require("./models");
+
 app.use(express.static(process.cwd() + '/public'));
 
 app.use(bodyParser.urlencoded({
@@ -22,3 +24,7 @@ app.use('/', routes);
 
 var port = process.env.PORT || 3000;
 app.listen(port);
+
+models.sequelize.sync().then(function() {
+	var server = app.listen(app.get('port'));
+})
