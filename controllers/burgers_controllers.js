@@ -39,6 +39,10 @@ router.put('/index/updateOne/:id', function(req, res) {
 	{
 		where: { id : req.params.id }
 	})
+	.then(models.Rating.create(
+	{
+		rating: "sick",//req.body.rating,
+	}))
 	.then(function (result) {
 		res.redirect('/');
 	});

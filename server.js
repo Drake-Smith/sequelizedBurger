@@ -2,12 +2,12 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-var Umzug = require('umzug');
-var umzug = new Umzug({});
+// var Umzug = require('umzug');
+// var umzug = new Umzug({});
 
 var app = express();
+var models = require('./models');
 
-var models = require("./models");
 
 app.use(express.static(process.cwd() + '/public'));
 
